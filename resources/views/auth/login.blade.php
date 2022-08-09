@@ -65,7 +65,8 @@
                                     <button class="btn btn-google col">
                                         <i class="mdi mdi-google-plus"></i> Google plus </button>
                                 </div>
-                                <p class="sign-up">Don't have an Account?<a href="#"> Sign Up</a></p>
+                                <p class="sign-up">no tienes cuenta?<a href="{{ route('register') }}"> Registrarse</a>
+                                </p>
                             </form>
                         </div>
                     </div>

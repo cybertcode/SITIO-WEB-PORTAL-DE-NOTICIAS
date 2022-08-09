@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('admin')
     <div class="content-wrapper">
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-12 grid-margin stretch-card">
                 <div class="card corona-gradient-card">
                     <div class="px-0 py-0 card-body px-sm-3">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="row">
             <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <div class="card">

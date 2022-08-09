@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\Backend\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,5 @@ Route::middleware([
 });
 // RUTAS PARA ADMINISTRACIÓN BACKEND
 Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+// RUTAS PARA CATEGORÍAS
+Route::resource('/categories', CategoryController::class)->names('admin.categories');

@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" />
+    {{-- Tostada --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 
 <body>
@@ -94,6 +96,29 @@
     <!-- Custom js for this page -->
     <script src="{{ asset('backend/assets/js/dashboard.js') }}"></script>
     <!-- End custom js for this page -->
+    {{-- tostada --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        @if (Session::has('messaje'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info("{{ Session::get('messaje') }}")
+                    break;
+                case 'success':
+                    toastr.success("{{ Session::get('messaje') }}")
+                    break;
+                case 'warning':
+                    toastr.warning("{{ Session::get('messaje') }}")
+                    break;
+                case 'error':
+                    toastr.error("{{ Session::get('messaje') }}")
+                    break;
+                default:
+                    break;
+            }
+        @endif
+    </script>
 </body>
 
 </html>
