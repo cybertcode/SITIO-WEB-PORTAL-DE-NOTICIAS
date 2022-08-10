@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\SubCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::middleware([
 Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 // RUTAS PARA CATEGORÍAS
 Route::resource('/categories', CategoryController::class)->names('admin.categories');
+// RUTAS PARA SUBCATEGORÍAS
+Route::resource('/subcategories', SubCategoryController::class)->names('admin.subcategories');

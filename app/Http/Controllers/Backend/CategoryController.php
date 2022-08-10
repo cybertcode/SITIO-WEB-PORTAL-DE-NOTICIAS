@@ -98,7 +98,7 @@ class CategoryController extends Controller
 
         $notification = array(
             'messaje' => 'Categoría actualidado correctamente',
-            'alert-type' => 'success',
+            'alert-type' => 'warning',
         );
         return redirect()->route('admin.categories.edit', $category)->with($notification);
 
@@ -115,7 +115,7 @@ class CategoryController extends Controller
         DB::table('categories')->where('id', $category)->delete();
         $notification = array(
             'messaje' => 'Categoría eliminado correctamente',
-            'alert-type' => 'success',
+            'alert-type' => 'error',
         );
         return redirect()->route('admin.categories.index')->with($notification);
 

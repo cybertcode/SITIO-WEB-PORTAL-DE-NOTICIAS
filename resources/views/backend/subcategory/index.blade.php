@@ -2,11 +2,11 @@
 @section('admin')
     <div class="content-wrapper">
         <div class="page-header">
-            <h3 class="page-title"> Categorías </h3>
+            <h3 class="page-title"> SubCategorías </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Inicio</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Lista de categorías</li>
+                    <li class="breadcrumb-item active" aria-current="page">Lista de subcategorías</li>
                 </ol>
             </nav>
         </div>
@@ -20,9 +20,10 @@
             <div class="card">
                 <div class="card-header">
                     <div class="template-demo">
-                        <h4 class="card-title" style="float: left;">Categorías</h4>
-                        <a href="{{ route('admin.categories.create') }}" class="btn btn-primary" style="float:right;">Nueva
-                            categoría</a>
+                        <h4 class="card-title" style="float: left;">subcategorías</h4>
+                        <a href="{{ route('admin.subcategories.create') }}" class="btn btn-primary"
+                            style="float:right;">Nueva
+                            subcategoría</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -31,8 +32,9 @@
                             <thead>
                                 <tr>
                                     <th> # </th>
-                                    <th> Categoría español </th>
-                                    <th> Categoría ingles</th>
+                                    <th> subcategoría español </th>
+                                    <th> subcategoría ingles</th>
+                                    <th> Categoría</th>
                                     <th colspan="2" class="text-center"> Acciones </th>
                                 </tr>
                             </thead>
@@ -40,17 +42,18 @@
                                 @php
                                     $i = 1;
                                 @endphp
-                                @forelse ($categories as $category)
+                                @forelse ($subcategories as $subcategory)
                                     <tr>
                                         <td>{{ $i++ }}</td>
-                                        <td> {{ $category->category_es }}</td>
-                                        <td> {{ $category->category_en }}</td>
+                                        <td> {{ $subcategory->subcategory_es }}</td>
+                                        <td> {{ $subcategory->subcategory_en }}</td>
+                                        <td> {{ $subcategory->category_es }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('admin.categories.edit', $category->id) }}"
+                                            <a href="{{ route('admin.subcategories.edit', $subcategory->id) }}"
                                                 class="btn btn-warning">Editar</a>
                                         </td>
                                         <td class="text-center">
-                                            <form action="{{ route('admin.categories.destroy', $category->id) }}"
+                                            <form action="{{ route('admin.subcategories.destroy', $subcategory->id) }}"
                                                 method="POST">
                                                 @csrf
                                                 @method('delete')
@@ -69,7 +72,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    {{ $categories->links('vendor.pagination.bootstrap-5') }}
+                    {{ $subcategories->links('vendor.pagination.bootstrap-5') }}
                 </div>
             </div>
         </div>

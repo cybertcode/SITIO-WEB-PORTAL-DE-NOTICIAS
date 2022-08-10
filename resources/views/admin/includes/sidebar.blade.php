@@ -83,7 +83,8 @@
                     <li class="nav-item"> <a class="nav-link"
                             href="{{ route('admin.categories.index') }}">Categorías</a>
                     </li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">SubCategorías</a>
+                    <li class="nav-item"> <a class="nav-link"
+                            href="{{ route('admin.subcategories.index') }}">SubCategorías</a>
                     </li>
         </li>
     </ul>
