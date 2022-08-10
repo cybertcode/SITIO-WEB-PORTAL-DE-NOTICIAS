@@ -112,7 +112,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        DB::table('categories')->where('id', $category)->delete();
+        DB::table('categories')->where('id', $category->id)->delete();
         $notification = array(
             'messaje' => 'Categoría eliminado correctamente',
             'alert-type' => 'error',

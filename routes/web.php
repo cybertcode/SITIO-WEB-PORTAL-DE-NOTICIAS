@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ProvinceController;
+use App\Http\Controllers\Backend\DepartamentController;
 use App\Http\Controllers\Backend\SubCategoryController;
 
 /*
@@ -35,3 +37,7 @@ Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.log
 Route::resource('/categories', CategoryController::class)->names('admin.categories');
 // RUTAS PARA SUBCATEGORÍAS
 Route::resource('/subcategories', SubCategoryController::class)->names('admin.subcategories');
+// RUTAS PARA DEPARTAMENTOS
+Route::resource('/departaments', DepartamentController::class)->names('admin.departaments');
+// RUTAS PARA PROVINCIAS
+Route::resource('/provinces', ProvinceController::class)->names('admin.provinces');
