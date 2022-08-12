@@ -133,4 +133,10 @@ class SubCategoryController extends Controller
         return redirect()->route('admin.subcategories.index')->with($notification);
 
     }
+    // Para traer las subcategories
+    public function all($category_id)
+    {
+        $sub = DB::table('subcategories')->where('category_id', $category_id)->get();
+        return response()->json($sub);
+    }
 }

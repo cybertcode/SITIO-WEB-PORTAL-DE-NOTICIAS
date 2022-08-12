@@ -4,7 +4,9 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    {{-- Para trabajar con ajax jquery --}}
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>CYBERTCODE WEB</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('backend/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
@@ -24,6 +26,11 @@
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" />
     {{-- Tostada --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <!-- include libraries(jQuery, bootstrap) For Summer Editor  -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
 </head>
 
 <body>
@@ -119,6 +126,75 @@
             }
         @endif
     </script>
+    {{-- PARA SUMMER EDITOR --}}
+    <!-- summernote css/js -->
+    <!-- summernote css/js -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+    <script type="text/javascript">
+        ClassicEditor
+            .create(document.querySelector('#details_es'), {
+                toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+                heading: {
+                    options: [{
+                            model: 'paragraph',
+                            title: 'Paragraph',
+                            class: 'ck-heading_paragraph'
+                        },
+                        {
+                            model: 'heading1',
+                            view: 'h1',
+                            title: 'Heading 1',
+                            class: 'ck-heading_heading1'
+                        },
+                        {
+                            model: 'heading2',
+                            view: 'h2',
+                            title: 'Heading 2',
+                            class: 'ck-heading_heading2'
+                        }
+                    ]
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        ClassicEditor
+            .create(document.querySelector('#details_en'), {
+                toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+                heading: {
+                    options: [{
+                            model: 'paragraph',
+                            title: 'Paragraph',
+                            class: 'ck-heading_paragraph'
+                        },
+                        {
+                            model: 'heading1',
+                            view: 'h1',
+                            title: 'Heading 1',
+                            class: 'ck-heading_heading1'
+                        },
+                        {
+                            model: 'heading2',
+                            view: 'h2',
+                            title: 'Heading 2',
+                            class: 'ck-heading_heading2'
+                        }
+                    ]
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    </script>
+
+    {{-- para poner fondo de letra en negro --}}
+    <style>
+        .ck-editor__main {
+            background-color: white;
+            color: black
+        }
+    </style>
+
 </body>
 
 </html>

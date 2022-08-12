@@ -109,6 +109,25 @@
             </div>
         </li>
         <li class="nav-item menu-items">
+            <a class="nav-link" data-bs-toggle="collapse" href="#posts" aria-expanded="false" aria-controls="posts">
+                <span class="menu-icon">
+                    <i class="mdi mdi-account-convert"></i>
+                </span>
+                <span class="menu-title">Publicaciones</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="posts">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('admin.posts.create') }}">Crear
+                            post</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('admin.posts.index') }}">Ver
+                            posts</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item menu-items">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
                 aria-controls="ui-basic">
                 <span class="menu-icon">

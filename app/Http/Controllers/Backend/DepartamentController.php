@@ -119,6 +119,11 @@ class DepartamentController extends Controller
             'alert-type' => 'error',
         );
         return redirect()->route('admin.departaments.index')->with($notification);
-
+    }
+    // Para traer las subcategories
+    public function all($departament_id)
+    {
+        $sub = DB::table('provinces')->where('departament_id', $departament_id)->get();
+        return response()->json($sub);
     }
 }
