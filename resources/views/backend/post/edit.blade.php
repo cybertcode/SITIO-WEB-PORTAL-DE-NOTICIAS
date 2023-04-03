@@ -30,7 +30,7 @@
                             'enctype' => 'multipart/form-data',
                         ]) !!}
                         @include('backend.post.partials.form')
-                        <div class="btn-group pull-right my-4">
+                        <div class="my-4 btn-group pull-right">
                             {!! Form::reset('Reset', ['class' => 'btn btn-warning']) !!}
                             <a href="{{ route('admin.posts.index') }}" class="btn btn-danger">Volver</a>
                             {!! Form::submit('Guardar', ['class' => 'mr-2 btn btn-primary']) !!}
@@ -46,6 +46,7 @@
         $(document).ready(function() {
             $('select[name="category_id"]').on('change', function() {
                 var category_id = $(this).val();
+                // console.log(category_id);
                 if (category_id) {
                     // Para trabajar con nombre de rutas
                     var url = "{{ route('admin.subcategories.all', ':category_id') }}";
@@ -65,9 +66,7 @@
                                     .subcategory_en +
                                     '</option>');
                             });
-
                         },
-
                     });
                 } else {
                     alert('danger');
@@ -94,9 +93,7 @@
                                     .id + '">' + value.province_es + ' | ' + value
                                     .province_en + '</option>');
                             });
-
                         },
-
                     });
                 } else {
                     alert('danger');

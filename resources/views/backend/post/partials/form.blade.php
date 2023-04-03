@@ -10,36 +10,36 @@
         <small class="text-danger">{{ $errors->first('title_en') }}</small>
     </div>
 </div>
-<div class="form-group row">
-    <div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }} col-12 col-lg-6">
-        {!! Form::label('category_id', 'Categoría') !!}
-        {!! Form::select('category_id', $categories, null, [
-            'class' => 'form-control',
-        ]) !!}
-        <small class="text-danger">{{ $errors->first('category_id') }}</small>
-    </div>
-    <div class="form-group{{ $errors->has('subcategory_id') ? ' has-error' : '' }} col-12 col-lg-6">
-        {!! Form::label('subcategory_id', 'Subcategoría') !!}
-        {!! Form::select('subcategory_id', ['' => 'Seleecione'], null, [
-            'id' => 'subcategory_id',
-            'class' => 'form-control',
-        ]) !!}
-        <small class="text-danger">{{ $errors->first('subcategory_id') }}</small>
-    </div>
+<div class="form-group row" ">
+    <div class=" form-group{{ $errors->has('category_id') ? ' has-error' : '' }} col-12 col-lg-6">
+    {!! Form::label('category_id', 'Categoría') !!}
+    {!! Form::select('category_id', $categories, null, [
+    'class' => 'form-control',
+    ]) !!}
+    <small class="text-danger">{{ $errors->first('category_id') }}</small>
+</div>
+<div class="form-group{{ $errors->has('subcategory_id') ? ' has-error' : '' }} col-12 col-lg-6">
+    {!! Form::label('subcategory_id', 'Subcategoría') !!}
+    {!! Form::select('subcategory_id', ['' => 'Seleecione'], null, [
+    'id' => 'subcategory_id',
+    'class' => 'form-control',
+    ]) !!}
+    <small class="text-danger">{{ $errors->first('subcategory_id') }}</small>
+</div>
 </div>
 <div class="form-group row">
     <div class="form-group{{ $errors->has('departament_id') ? ' has-error' : '' }} col-12 col-lg-6">
         {!! Form::label('departament_id', 'Departamento') !!}
         {!! Form::select('departament_id', $departaments, null, [
-            'id' => 'departament_id',
-            'class' => 'form-control',
+        'id' => 'departament_id',
+        'class' => 'form-control',
         ]) !!}
         <small class="text-danger">{{ $errors->first('departament_id') }}</small>
     </div>
     <div class="form-group{{ $errors->has('province_id') ? ' has-error' : '' }} col-12 col-lg-6">
         {!! Form::label('province_id', 'Provincia') !!}
         {!! Form::select('province_id', ['' => 'Seleccione'], null, [
-            'class' => 'form-control',
+        'class' => 'form-control',
         ]) !!}
         <small class="text-danger">{{ $errors->first('province_id') }}</small>
     </div>
@@ -88,8 +88,8 @@
     </label>
     <label for="first_section_thumbnail" class="form-check-label col-md-3">
         {!! Form::checkbox('first_section_thumbnail', '1', null, [
-            'id' => 'first_section_thumbnail',
-            'class' => 'form-check-input',
+        'id' => 'first_section_thumbnail',
+        'class' => 'form-check-input',
         ]) !!} Primera sección miniatura
     </label>
     <label for="bigthumbnail" class="form-check-label col-md-3">
